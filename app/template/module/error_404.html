@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block title %}Error 404 | {{ session['company'] }} {% endblock %}
+{% block body %}
+    <div class="container-fluid p-0 text-center">
+            <img src="{{ url_for('static',filename='/img/misc/error_404.png') }}" alt="Error 404">
+    </div>
+{% endblock %}

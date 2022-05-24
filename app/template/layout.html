@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<meta name="description" content="All States Medical Equipment and Distribution - Inventory, Management, and Repair App" >
+	<meta name="keywords" content="Buy, Sell, Repair, Used, New, Refurbished, Medical, Equipment, Inventory, Management, App" >
+
+	<meta name="distribution" content="Global"/>
+	<meta name="publisher" content="All States MED"/>
+	<meta name="copyright" content="All States MED"/>
+	<meta name="author" content="All States MED"/>
+	<meta name="robots" content="ALL">
+	<link rel="canonical" href="https://myportal.allstatesmed.com/" />
+    {% include 'module/assets.html' %}
+</head>
+<body id="body">
+    {% block body %} {% endblock %}
+    {% include 'module/js-libs.html' %}
+</body>
+</html>

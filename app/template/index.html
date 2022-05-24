@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}All States MED{% endblock %}
+{% block body %}
+	
+{% include 'module/top-bar.html' %}
+{% include 'module/header.html' %}
+	<section id="intro">
+		<div class="intro-content wow fadeIn" >
+			<a href="https://allstatesmed.com"><img src="{{ url_for('static',filename='img/logo.png') }}" alt="About All States MED | Medical Equipment and Distribution" width="50%"></a><br>
+			<div class="intro-logo wow fadeIn" data-wow-duration="2s" data-wow-delay="1.2s" >  
+				<h4>Check out our locations:</h4>
+				<a href="https://locations.allstatesmed.com/florida/" class="btn-projects scrollto">Florida (FL)</a>
+				
+			</div>
+		</div>
+
+		<div id="intro-carousel" class="owl-carousel" >
+			<div class="item" style="background-image: url('img/intro-carousel/1.jpg');"></div>
+			<div class="item" style="background-image: url('img/intro-carousel/2.jpg');"></div>
+			<div class="item" style="background-image: url('img/intro-carousel/3.jpg');"></div>
+		</div>
+	</section>
+
+
+	<main id="main">
+		
+        {% include 'module/services.html' %}
+        {% include 'module/about.html' %}
+        {% include 'module/call-to-action.html' %}
+        {% include 'module/footer.html' %}
+	
+	</main>
+	<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+{% endblock %}
