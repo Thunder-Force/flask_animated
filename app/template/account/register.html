@@ -1,0 +1,259 @@
+{% extends "layout.html" %}
+{% block title %}Register | {{ company }} {% endblock %}
+{% block body %}
+	<main class="d-flex w-100 h-100">
+		<div class="container d-flex flex-column">
+			<div class="row vh-100">
+				<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+					<div class="d-table-cell align-middle">
+						<div class="text-center mb-5">
+							<img src="{{ url_for('static', filename='/img/brand/logo.png') }}" alt="All States MED" class="img-fluid" /> 
+						</div>
+
+						<form action="/account/register/" method="post">
+							<div class=""> <!-- card -->	
+								<div class="card-body">
+                                    <hr>
+                                    <h5 class="text-center"><strong>ACCOUNT REGISTRATION</strong></h5>
+									<h5 class="card-title mb-0 text-center asm">USER INFORMATION</h5>
+									<div class="m-sm-4">
+										<div class="mb-3">
+											<label class="form-label">First Name</label>
+											<input class="form-control form-control-lg" type="text" name="first_name" autocomplete="off" required>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Last Name</label>
+											<input class="form-control form-control-lg" type="text" name="last_name" autocomplete="off" required>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Phone</label>
+											<input class="form-control form-control-lg" onkeypress="return phone_number(event);" name="phone"autocomplete="off" required>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Email</label>
+											<input class="form-control form-control-lg" type="email" name="email" autocomplete="off" required>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Password</label>
+											<input class="form-control form-control-lg" type="password" name="password" autocomplete="off" required>
+										</div>
+									</div>
+								</div>                              
+							</div>
+                            
+							<!-- Company Registration -->
+							<div class="">
+								<div class="card-body">
+                                    <br><h5 class="card-title mb-0 text-center asm">COMPANY INFORMATION</h5>
+									<div class="m-sm-4">
+										<div class="mb-3">
+											<label class="form-label">Company Name</label>
+											<input class="form-control form-control-lg" type="text" name="first_name" autocomplete="off" required>
+										</div>
+										<div class="mb-3">
+											<kbd>Billing Address</kbd>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Address Line 1</label>
+											<input class="form-control form-control-lg" type="text" name="bill_addr_l1" autocomplete="off" required>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Address Line 2</label>
+											<input class="form-control form-control-lg" type="text" name="bill_addr_l2" autocomplete="off" required>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">City</label>
+											<input class="form-control form-control-lg" type="text" name="bill_city" autocomplete="off" required>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">State</label>
+											<select class="form-control mb-3" name="bill_state">
+												<option value="AL">Alabama</option>
+												<option value="AK">Alaska</option>
+												<option value="AZ">Arizona</option>
+												<option value="AR">Arkansas</option>
+												<option value="CA">California</option>
+												<option value="CO">Colorado</option>
+												<option value="CT">Connecticut</option>
+												<option value="DE">Delaware</option>
+												<option value="DC">District Of Columbia</option>
+												<option value="FL">Florida</option>
+												<option value="GA">Georgia</option>
+												<option value="HI">Hawaii</option>
+												<option value="ID">Idaho</option>
+												<option value="IL">Illinois</option>
+												<option value="IN">Indiana</option>
+												<option value="IA">Iowa</option>
+												<option value="KS">Kansas</option>
+												<option value="KY">Kentucky</option>
+												<option value="LA">Louisiana</option>
+												<option value="ME">Maine</option>
+												<option value="MD">Maryland</option>
+												<option value="MA">Massachusetts</option>
+												<option value="MI">Michigan</option>
+												<option value="MN">Minnesota</option>
+												<option value="MS">Mississippi</option>
+												<option value="MO">Missouri</option>
+												<option value="MT">Montana</option>
+												<option value="NE">Nebraska</option>
+												<option value="NV">Nevada</option>
+												<option value="NH">New Hampshire</option>
+												<option value="NJ">New Jersey</option>
+												<option value="NM">New Mexico</option>
+												<option value="NY">New York</option>
+												<option value="NC">North Carolina</option>
+												<option value="ND">North Dakota</option>
+												<option value="OH">Ohio</option>
+												<option value="OK">Oklahoma</option>
+												<option value="OR">Oregon</option>
+												<option value="PA">Pennsylvania</option>
+												<option value="RI">Rhode Island</option>
+												<option value="SC">South Carolina</option>
+												<option value="SD">South Dakota</option>
+												<option value="TN">Tennessee</option>
+												<option value="TX">Texas</option>
+												<option value="UT">Utah</option>
+												<option value="VT">Vermont</option>
+												<option value="VA">Virginia</option>
+												<option value="WA">Washington</option>
+												<option value="WV">West Virginia</option>
+												<option value="WI">Wisconsin</option>
+												<option value="WY">Wyoming</option>
+											</select>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Zip Code</label>
+											<input class="form-control form-control-lg" type="text" name="bill_zip" autocomplete="off" required>
+										</div>
+										
+										<!-- Shipping -->
+										<kbd>Shipping Address</kbd>
+										<div class="mb-3">
+											<input class="ship_same_as_bill" type="checkbox" name="ship_same_as_bill" onchange="addr_change()" checked/> 
+										 	<small> same as billing</small>
+										</div>
+										<div class="ship_addr">
+											<div class="mb-3">
+												<label class="form-label">Address Line 1</label>
+												<input class="form-control form-control-lg" type="text" name="ship_addr_l1" autocomplete="off">
+											</div>
+											<div class="mb-3">
+												<label class="form-label">Address Line 2</label>
+												<input class="form-control form-control-lg" type="text" name="ship_addr_l2" autocomplete="off">
+											</div>
+											<div class="mb-3">
+												<label class="form-label">City</label>
+												<input class="form-control form-control-lg" type="text" name="ship_city" autocomplete="off">
+											</div>
+											<div class="mb-3">
+												<label class="form-label">State</label>
+												<select class="form-control mb-3" name="ship_state">
+													<option value="AL">Alabama</option>
+													<option value="AK">Alaska</option>
+													<option value="AZ">Arizona</option>
+													<option value="AR">Arkansas</option>
+													<option value="CA">California</option>
+													<option value="CO">Colorado</option>
+													<option value="CT">Connecticut</option>
+													<option value="DE">Delaware</option>
+													<option value="DC">District Of Columbia</option>
+													<option value="FL">Florida</option>
+													<option value="GA">Georgia</option>
+													<option value="HI">Hawaii</option>
+													<option value="ID">Idaho</option>
+													<option value="IL">Illinois</option>
+													<option value="IN">Indiana</option>
+													<option value="IA">Iowa</option>
+													<option value="KS">Kansas</option>
+													<option value="KY">Kentucky</option>
+													<option value="LA">Louisiana</option>
+													<option value="ME">Maine</option>
+													<option value="MD">Maryland</option>
+													<option value="MA">Massachusetts</option>
+													<option value="MI">Michigan</option>
+													<option value="MN">Minnesota</option>
+													<option value="MS">Mississippi</option>
+													<option value="MO">Missouri</option>
+													<option value="MT">Montana</option>
+													<option value="NE">Nebraska</option>
+													<option value="NV">Nevada</option>
+													<option value="NH">New Hampshire</option>
+													<option value="NJ">New Jersey</option>
+													<option value="NM">New Mexico</option>
+													<option value="NY">New York</option>
+													<option value="NC">North Carolina</option>
+													<option value="ND">North Dakota</option>
+													<option value="OH">Ohio</option>
+													<option value="OK">Oklahoma</option>
+													<option value="OR">Oregon</option>
+													<option value="PA">Pennsylvania</option>
+													<option value="RI">Rhode Island</option>
+													<option value="SC">South Carolina</option>
+													<option value="SD">South Dakota</option>
+													<option value="TN">Tennessee</option>
+													<option value="TX">Texas</option>
+													<option value="UT">Utah</option>
+													<option value="VT">Vermont</option>
+													<option value="VA">Virginia</option>
+													<option value="WA">Washington</option>
+													<option value="WV">West Virginia</option>
+													<option value="WI">Wisconsin</option>
+													<option value="WY">Wyoming</option>
+												</select>
+											</div>
+											<div class="mb-3">
+												<label class="form-label">Zip Code</label>
+												<input class="form-control form-control-lg" type="text" name="bill_zip" autocomplete="off">
+											</div>
+										</div>
+										<script type="text/javascript">
+
+											window.addEventListener("DOMContentLoaded", function() {
+												$('.ship_addr').hide();
+											});
+
+											function addr_change() {
+												if($('.ship_same_as_bill').is(':checked')) $('.ship_addr').hide();
+												else $('.ship_addr').show();
+											}
+
+											function phone_number(evt) {
+												var charCode = (evt.which) ? evt.which : event.keyCode;
+												console.log(charCode);
+													if (charCode != 46 && charCode != 45 && charCode > 31
+													&& (charCode < 48 || charCode > 57))
+													return false;
+
+												return true;
+											}
+
+										</script>
+
+										<!-- Submit-->
+										<div class="text-center mt-3" >
+											<input type="submit" class="btn btn-lg btn-block btn-asm w-100 h-100" value="REGISTER">
+										</div>
+
+										<div class="mb-3 mt-2">
+											<div class="container px-4">
+												<div class="row gx-5">
+													<div class="col text-center">
+														<small><a href="/account/login/" class="link-asm">Login Account</a></small>
+													</div>
+													<div class="col text-center">
+														<small><a href="/account/recover/" class="link-asm">Recover Account</a></small>
+													</div>
+												</div>
+											</div>
+										</div>	
+										
+									</div>
+								</div>						
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}

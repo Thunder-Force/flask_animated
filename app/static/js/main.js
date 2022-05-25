@@ -1,5 +1,9 @@
 jQuery(document).ready(function( $ ) {
 
+	// Animation on Scroll
+  	AOS.init();
+
+
 	// Back to top button
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 100) {
@@ -21,12 +25,11 @@ jQuery(document).ready(function( $ ) {
 		autoplay: true,
 		dots: false,
 		loop: true,
+		transitionStyle: "fade",
 		animateOut: 'fadeOut',
 		items: 1
 	});
 
-	// Initiate the wowjs animation library
-	new WOW().init();
 
 	// Initiate superfish on nav menu
 	$('.nav-menu').superfish({
@@ -35,6 +38,7 @@ jQuery(document).ready(function( $ ) {
 		},
 		speed: 400
 	});
+
 
 	// Mobile Navigation
 	if ($('#nav-menu-container').length) {

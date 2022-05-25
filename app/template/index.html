@@ -5,19 +5,19 @@
 {% include 'module/top-bar.html' %}
 {% include 'module/header.html' %}
 	<section id="intro">
-		<div class="intro-content wow fadeIn" >
-			<a href="https://allstatesmed.com"><img src="{{ url_for('static',filename='img/logo.png') }}" alt="About All States MED | Medical Equipment and Distribution" width="50%"></a><br>
-			<div class="intro-logo wow fadeIn" data-wow-duration="2s" data-wow-delay="1.2s" >  
+		<div class="intro-content" data-aos="fade-in">
+			<a href="https://allstatesmed.com"><img src="{{ url_for('static',filename='img/brand/logo.png') }}" alt="About All States MED | Medical Equipment and Distribution" width="50%"></a><br>
+			<div class="intro-logo" data-aos="fade-in" data-aos-duration="200" data-aos-delay="1200" >  
 				<h4>Check out our locations:</h4>
-				<a href="https://locations.allstatesmed.com/florida/" class="btn-projects scrollto">Florida (FL)</a>
+				<a href="#" class="btn-projects scrollto">Florida (FL)</a>
 				
 			</div>
 		</div>
 
 		<div id="intro-carousel" class="owl-carousel" >
-			<div class="item" style="background-image: url('img/intro-carousel/1.jpg');"></div>
-			<div class="item" style="background-image: url('img/intro-carousel/2.jpg');"></div>
-			<div class="item" style="background-image: url('img/intro-carousel/3.jpg');"></div>
+			<div class="item" style="background-image: url({{ url_for('static',filename='img/intro-carousel/1.jpg') }});"></div>
+			<div class="item" style="background-image: url({{ url_for('static',filename='img/intro-carousel/2.jpg') }});"></div>
+			<div class="item" style="background-image: url({{ url_for('static',filename='img/intro-carousel/3.jpg') }});"></div>
 		</div>
 	</section>
 

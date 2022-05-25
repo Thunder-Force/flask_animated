@@ -1,0 +1,58 @@
+/** BOOSTRAP OVERIDE **/
+
+hr.style-one {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+hr.style-two {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.a:hover   { color: #CC2233; }
+
+.sidebar-link         { color: #fff; }
+.sidebar-link:link    { color: #fff; }
+.sidebar-link:focus   { color: #A51B28; } 
+.sidebar-link:hover   { color: #CC2233; }
+
+
+.sidebar-link-title        { color: #fff; }
+.sidebar-link-title:link    { color: #fff; }
+.sidebar-link-title:focus   { color: #A51B28; } 
+.sidebar-link-title:hover   { color: #CC2233; }
+
+.sidebar-item         { color: #fff; }
+.sidebar-item:link    { color: #fff; }
+.sidebar-item:focus   { color: #A51B28; } 
+.sidebar-item:hover   { color: #CC2233; }
+
+/** CUSTOM asm CLASS **/
+.asm			  { color: #A51B28; }
+
+.link-asm:link    { color: #A51B28; }
+.link-asm:focus   { color: #A51B28; } 
+.link-asm:hover   { color: #CC2233; }
+.link-asm:active  { color: #A51B28; }
+.link-asm:visited { color: #A51B28; } 
+
+.btn-asm 	    { color:#fff; background-color:#A51B28; }
+.btn-asm:hover  { color:#fff; background-color:#CC2233; }
+.btn-asm:active { color:#fff; background-color:#A51B28; }
+
+.btn-asm-dark 	     { color:#fff; background-color:#222; }
+.btn-asm-dark:hover  { color:#fff; background-color:#333; }
+.btn-asm-dark:active { color:#fff; background-color:#444; }
+
+.btn-asm-white 	    	{ font-size: 12px; font-weight: bolder; color:#888; background-color:#fff;  box-shadow: 4px 4px 8px 1px rgba(0,0,0,0.2); transition: 0.3s;}
+.btn-asm-white:hover  	{ color:#0C7CE6; background-color:#fff;  box-shadow: 4px 6px 8px 3px rgba(0,0,0,0.2); transition: 0.3s;}
+.btn-asm-white:active 	{ color:#0C7CE6; background-color:#fff;  box-shadow: 4px 6px 8px 3px rgba(0,0,0,0.2); transition: 0.3s;}
+
+.btn-asm-blue01 	   { color:#fff; background-color:#063E72; }
+.btn-asm-blue01:hover  { color:#fff; background-color:#09589E; }
+.btn-asm-blue01:active { color:#fff; background-color:#09589E; }
+
